@@ -4,7 +4,7 @@ export default initialValue => {
   const [value, setValue] = useState('');
   const [invalidValue, setInvalidValue] = useState(false);
   const [list, setList] = useState(initialValue);
-  const [copyBtnText, setCopyBtnText] = useState('Copy');
+  const [copyItemSuccess, setCopyItemSuccess] = useState('');
 
   return {
     onChange: e => setValue(e.target.value),
@@ -23,10 +23,10 @@ export default initialValue => {
         setInvalidValue(true);
       }
     },
-    onCopy: () => setCopyBtnText('Copied!'),
+    onCopy: item => setCopyItemSuccess(item),
     value,
     invalidValue,
     list,
-    copyBtnText,
+    copyItemSuccess,
   };
 };

@@ -14,7 +14,7 @@ const Main = () => {
   const {
     value, invalidValue,
     onChange, onSubmit,
-    list, onCopy, copyBtnText,
+    list, onCopy, copyItemSuccess,
   } = useStateList([]);
 
   return (
@@ -29,7 +29,7 @@ const Main = () => {
       <LinksList
         list={list}
         onCopy={onCopy}
-        copyBtnText={copyBtnText}
+        copyItemSuccess={copyItemSuccess}
       />
       <section className={styles.stats}>
         <div className={styles.info}>

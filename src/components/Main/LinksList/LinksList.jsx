@@ -5,7 +5,7 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import Button from 'lib/components/Button';
 import styles from './styles.module.scss';
 
-const LinksList = ({ className, list, onCopy, copyBtnText }) => (
+const LinksList = ({ className, list, onCopy, copyItemSuccess }) => (
   <section className={cx(styles.list, className)}>
     {list.map((item, index) => (
       <div className={styles.item} key={index}>
@@ -20,15 +20,15 @@ const LinksList = ({ className, list, onCopy, copyBtnText }) => (
         >
           {item.shortLink}
         </a>
-        <CopyToClipboard text={item.shortLink} onCopy={onCopy}>
+        <CopyToClipboard text={item.shortLink} onCopy={() => onCopy(item.shortLink)}>
           <Button
             className={cx(styles.copyBtn, {
-              [styles.copySuccess]: copyBtnText === 'Copied!',
+              [styles.copySuccess]: copyItemSuccess === item.shortLink,
             })}
             square
             sm
           >
-            {copyBtnText}
+            {copyItemSuccess === item.shortLink ? 'Copied!' : 'Copy'}
           </Button>
         </CopyToClipboard>
       </div>
@@ -39,13 +39,13 @@ const LinksList = ({ className, list, onCopy, copyBtnText }) => (
 LinksList.propTypes = {
   className: PropTypes.string,
   list: PropTypes.array,
-  copyBtnText: PropTypes.oneOf(['Copy', 'Copied!']),
+  copyItemSuccess: PropTypes.bool,
   onCopy: PropTypes.func.isRequired,
 };
 
 LinksList.defaultProps = {
   className: '',
-  copyBtnText: 'Copy',
+  copyItemSuccess: false,
   list: [],
 };
 
