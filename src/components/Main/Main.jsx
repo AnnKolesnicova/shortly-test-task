@@ -7,6 +7,7 @@ import InfoBlock from './InfoBlock';
 import icon1 from './icons/brand-recognition.svg';
 import icon2 from './icons/detailed-records.svg';
 import icon3 from './icons/fully-customizable.svg';
+
 import styles from './styles.module.scss';
 
 const Main = () => {
@@ -25,13 +26,11 @@ const Main = () => {
         onChange={onChange}
         onSubmit={onSubmit}
       />
-      {list &&
-        <LinksList
-          list={list}
-          onCopy={onCopy}
-          copyBtnText={copyBtnText}
-        />
-      }
+      <LinksList
+        list={list}
+        onCopy={onCopy}
+        copyBtnText={copyBtnText}
+      />
       <section className={styles.stats}>
         <div className={styles.info}>
           <h1 className={styles.heading}>

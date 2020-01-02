@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import cx from 'classnames';
 import styles from './styles.module.scss';
 
@@ -16,5 +17,19 @@ const InfoBlock = ({
     <p>{caption}</p>
   </section>
 );
+
+InfoBlock.propTypes = {
+  className: PropTypes.string,
+  heading: PropTypes.string,
+  caption: PropTypes.string,
+  icon: PropTypes.string,
+};
+
+InfoBlock.defaultProps = {
+  className: '',
+  heading: '',
+  caption: '',
+  icon: '',
+};
 
 export default InfoBlock;

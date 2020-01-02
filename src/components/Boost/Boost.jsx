@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './styles.module.scss';
 import Button from 'lib/components/Button';
 
-const BoostBlock = () => (
+const Boost = () => (
   <section className={styles.boost}>
     <h1 className={styles.heading}>
       Boost your links today
@@ -11,4 +11,4 @@ const BoostBlock = () => (
   </section>
 );
 
-export default BoostBlock;
+export default Boost;

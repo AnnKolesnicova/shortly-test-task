@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './styles.module.scss';
-import aboutImage from 'lib/images/work-image.png'
 import Button from 'lib/components/Button';
+import aboutImage from 'lib/images/work-image.png'
+import styles from './styles.module.scss';
 
 const About = () => (
   <section className={styles.about}>

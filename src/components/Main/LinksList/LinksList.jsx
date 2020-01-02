@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import cx from 'classnames';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import Button from 'lib/components/Button';
@@ -34,5 +35,18 @@ const LinksList = ({ className, list, onCopy, copyBtnText }) => (
     ))}
   </section>
 );
+
+LinksList.propTypes = {
+  className: PropTypes.string,
+  list: PropTypes.array,
+  copyBtnText: PropTypes.oneOf(['Copy', 'Copied!']),
+  onCopy: PropTypes.func.isRequired,
+};
+
+LinksList.defaultProps = {
+  className: '',
+  copyBtnText: 'Copy',
+  list: [],
+};
 
 export default LinksList;

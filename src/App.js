@@ -1,21 +1,19 @@
 import React from 'react';
-import styles from './App.module.scss';
 import Header from 'components/Header';
 import About from 'components/About';
 import Main from 'components/Main';
-import BoostBlock from 'components/BoostBlock';
+import Boost from 'components/Boost';
 import Footer from 'components/Footer';
+import styles from './App.module.scss';
 
-function App() {
-  return (
-    <div className={styles.container}>
-      <Header />
-      <About />
-      <Main />
-      <BoostBlock />
-      <Footer />
-    </div>
-  );
-}
+const App = () => (
+  <div className={styles.container}>
+    <Header/>
+    <About/>
+    <Main/>
+    <Boost/>
+    <Footer/>
+  </div>
+);
 
 export default App;
