@@ -1,0 +1,85 @@
+@import 'lib/styles.scss';
+
+$inputHeight: 64px;
+
+.container {
+  padding: 0 65px;
+  background-image: url("./form-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+
+  .form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+
+    .input {
+      flex-grow: 1;
+      width: 100%;
+      border-radius: 10px;
+      box-sizing: border-box;
+      border: none;
+      height: $inputHeight;
+      outline: 0;
+      font-size: 20px;
+      padding: 0 30px;
+      margin-right: 20px;
+      color: $text-secondary;
+
+      &::placeholder {
+        color: $text-secondary;
+      }
+
+      &.invalid {
+        border: solid 2px #F46363;
+
+        &::placeholder {
+          color: transparentize(#F46363, 0.5);
+        }
+      }
+    }
+
+    .error {
+      color: #F46363;
+      position: absolute;
+      left: 0;
+      bottom: -30px;
+      font-weight: 500;
+      font-style: italic;
+    }
+  }
+}
+
+@include mobile-device {
+  .container {
+    padding: 20px;
+
+    .form {
+      flex-direction: column;
+      height: auto;
+
+      .input {
+        margin: 0 0 20px;
+        box-sizing: border-box;
+
+        &.invalid {
+          margin: 0 0 40px;
+        }
+      }
+
+      .error {
+        bottom: 100%;
+        top: $inputHeight + 10;
+      }
+
+      .shortenBtn {
+        width: 100%;
+      }
+    }
+  }
+
+}

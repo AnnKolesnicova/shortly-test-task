@@ -1,0 +1,62 @@
+@import 'lib/styles.scss';
+
+.list {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+
+  .item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $white;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 20px;
+
+    .link {
+      flex-grow: 1;
+      max-width: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .shortLink {
+      color: $brand;
+      margin: 0 20px;
+    }
+
+    .copyBtn {
+      &.copySuccess {
+        background-color: $bg-primary;
+        cursor: default;
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+@include mobile-device {
+  .list {
+    .item {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 0;
+      margin-bottom: 20px;
+
+      .link, .shortLink {
+        padding: 20px;
+        margin: 0;
+      }
+
+      .shortLink {
+        border-top: solid 1px transparentize($text-secondary, 0.75);
+      }
+
+      .copyBtn {
+        margin: 0 20px 20px;
+      }
+    }
+  }
+}

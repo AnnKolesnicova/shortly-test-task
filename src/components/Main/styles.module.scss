@@ -1,0 +1,119 @@
+@import 'lib/styles.scss';
+
+$formHeight: 168px;
+$statsGrid: 30px;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 147px;
+  padding: 0 $grid-padding 70px;
+  background-color: $bg-tertiary;
+
+  .form {
+    height: $formHeight;
+    margin-top: -($formHeight / 2);
+  }
+
+  .stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+    color: $text-secondary;
+
+    .info {
+      padding: 90px 0 110px;
+      text-align: center;
+      max-width: 50%;
+
+      .heading {
+        font-size: 40px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .aboutStats {
+      display: flex;
+      align-items: flex-start;
+
+      .infoBlock {
+        flex-basis: calc(100% / 3);
+      }
+
+      .infoBlock:nth-child(2) {
+        margin: ($statsGrid + 10px) $statsGrid 0;
+
+        &::before, &::after {
+          background-color: $brand;
+          height: 8px;
+          width: $statsGrid;
+          position: absolute;
+          content: "";
+          top: 35%;
+        }
+
+        &::before {
+          left: -$statsGrid;
+        }
+
+        &::after {
+          right: -$statsGrid;
+        }
+      }
+
+      .infoBlock:last-child {
+        margin-top: $statsGrid * 3;
+      }
+    }
+  }
+}
+
+@include mobile-device {
+  .container {
+    padding: 0 20px 70px;
+
+    .form {
+      height: auto;
+    }
+
+    .stats {
+      .info {
+        max-width: 100%;
+
+        .heading {
+          font-size: 28px;
+        }
+      }
+
+      .aboutStats {
+        flex-direction: column;
+
+        .infoBlock:nth-child(2) {
+          margin: ($statsGrid * 3) 0;
+
+          &::before, &::after {
+            background-color: $brand;
+            height: $statsGrid * 3;
+            width: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+
+          &::before {
+            top: -$statsGrid * 3;
+          }
+
+          &::after {
+            bottom: -$statsGrid * 2;
+            top: 100%;
+          }
+        }
+
+        .infoBlock:last-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}

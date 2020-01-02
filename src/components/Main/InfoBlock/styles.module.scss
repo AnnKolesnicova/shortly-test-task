@@ -1,0 +1,41 @@
+@import 'lib/styles.scss';
+
+$iconContainerSize: 88px;
+
+.infoBlock {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 50px 40px;
+  background-color: $white;
+  border-radius: 5px;
+  color: $text-secondary;
+  font-size: 15px;
+  line-height: 26px;
+
+
+  .heading {
+    margin: 20px 0;
+    color: $text-primary;
+    font-size: 22px;
+  }
+
+  .icon {
+    position: absolute;
+    top: -($iconContainerSize / 2);
+    left: 32px;
+    height: $iconContainerSize;
+    width: $iconContainerSize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: $bg-primary;
+    color: $brand;
+
+    @include mobile-device {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
