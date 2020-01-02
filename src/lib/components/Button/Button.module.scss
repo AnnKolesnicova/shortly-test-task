@@ -1,0 +1,43 @@
+@import 'lib/styles.scss';
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  font-weight: bold;
+  font-size: 20px;
+  min-width: 190px;
+  height: 56px;
+  padding: 0 25px;
+  color: $white;
+  background-color: $brand;
+  border-radius: 28px;
+  border: none;
+  outline: 0;
+  cursor: pointer;
+  transition: background-color linear 0.2s;
+
+  /* https://stackoverflow.com/a/40483475 */
+  &::before,
+  &::after {
+    content: "";
+    flex: 1 0 auto;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: #9AE3E3;
+  }
+}
+
+.square {
+  border-radius: 10px;
+  height: 64px;
+}
+
+.sm {
+  height: 40px;
+  min-width: 110px;
+  font-size: 15px;
+}
