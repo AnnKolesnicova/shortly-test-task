@@ -15,7 +15,7 @@ npm start
 Runs the app in the development mode.
 
 ## Structure
-`App.js` is intro point.
+`index.js` is intro point.
 
     src
     ├── components              # main project components
