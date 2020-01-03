@@ -7,8 +7,8 @@ import styles from './styles.module.scss';
 
 const LinksList = ({ className, list, onCopy, copyItemSuccess }) => (
   <section className={cx(styles.list, className)}>
-    {list.map((item, index) => (
-      <div className={styles.item} key={index}>
+    {list.map(item => (
+      <div className={styles.item} key={item.id}>
         <p className={styles.link}>
           {item.link}
         </p>
@@ -20,15 +20,18 @@ const LinksList = ({ className, list, onCopy, copyItemSuccess }) => (
         >
           {item.shortLink}
         </a>
-        <CopyToClipboard text={item.shortLink} onCopy={() => onCopy(item.shortLink)}>
+        <CopyToClipboard
+          text={item.shortLink}
+          onCopy={() => onCopy(item.id)}
+        >
           <Button
             className={cx(styles.copyBtn, {
-              [styles.copySuccess]: copyItemSuccess === item.shortLink,
+              [styles.copySuccess]: copyItemSuccess === item.id,
             })}
             square
             sm
           >
-            {copyItemSuccess === item.shortLink ? 'Copied!' : 'Copy'}
+            {copyItemSuccess === item.id ? 'Copied!' : 'Copy'}
           </Button>
         </CopyToClipboard>
       </div>
@@ -39,13 +42,13 @@ const LinksList = ({ className, list, onCopy, copyItemSuccess }) => (
 LinksList.propTypes = {
   className: PropTypes.string,
   list: PropTypes.array,
-  copyItemSuccess: PropTypes.bool,
+  copyItemSuccess: PropTypes.string,
   onCopy: PropTypes.func.isRequired,
 };
 
 LinksList.defaultProps = {
   className: '',
-  copyItemSuccess: false,
+  copyItemSuccess: '',
   list: [],
 };
 
