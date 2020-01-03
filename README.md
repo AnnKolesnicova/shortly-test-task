@@ -19,8 +19,8 @@ Runs the app in the development mode.
 
     src
     ├── components              # main project components
-    ├── lib                     # reusable components and styles
     ├── service                 # create routes for http request
+    ├── lib                     # reusable components and styles
     │   └── components          # reusable jsx
     │   └── fonts               # project fonts
     │   └── styles              # typography, mixins, colors
