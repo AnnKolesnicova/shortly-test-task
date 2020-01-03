@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ShortlyService from 'services';
 
 export default initialValue => {
   const [value, setValue] = useState('');
@@ -8,17 +9,24 @@ export default initialValue => {
 
   return {
     onChange: e => setValue(e.target.value),
-    onSubmit: e => {
+    onSubmit: async (e) => {
       e.preventDefault();
+
       if (value) {
         setInvalidValue(false);
-        const shortLink =
-          'https://rel.ink/' + Math.random().toString(36).substring(2);
-        setList([...list, {
-          link: value,
-          shortLink,
-        }]);
-        setValue('');
+        try {
+          const response = await ShortlyService.shortenLink({ longUrl: value });
+          const { shortUrl, id } = response;
+
+          setList([...list, {
+            link: value,
+            shortLink: shortUrl,
+            id,
+          }]);
+          setValue('');
+        } catch (error) {
+          console.error(error)
+        }
       } else {
         setInvalidValue(true);
       }
