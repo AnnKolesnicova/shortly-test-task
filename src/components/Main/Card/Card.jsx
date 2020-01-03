@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import styles from './styles.module.scss';
 
-const InfoBlock = ({
+const Card = ({
   className,
   heading, caption, icon,
 }) => (
@@ -18,18 +18,18 @@ const InfoBlock = ({
   </section>
 );
 
-InfoBlock.propTypes = {
+Card.propTypes = {
   className: PropTypes.string,
   heading: PropTypes.string,
   caption: PropTypes.string,
   icon: PropTypes.string,
 };
 
-InfoBlock.defaultProps = {
+Card.defaultProps = {
   className: '',
   heading: '',
   caption: '',
   icon: '',
 };
 
-export default InfoBlock;
+export default Card;

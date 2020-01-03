@@ -2,7 +2,7 @@ import React from 'react';
 import useStateList from './container';
 import LinkForm from './LinkForm';
 import LinksList from './LinksList';
-import InfoBlock from './InfoBlock';
+import Card from './Card';
 
 import icon1 from './icons/brand-recognition.svg';
 import icon2 from './icons/detailed-records.svg';
@@ -41,19 +41,19 @@ const Main = () => {
           </p>
         </div>
         <div className={styles.aboutStats}>
-          <InfoBlock
+          <Card
             className={styles.infoBlock}
             heading={'Brand Recognition'}
             caption={'Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content.'}
             icon={icon1}
           />
-          <InfoBlock
+          <Card
             className={styles.infoBlock}
             heading={'Detailed Records'}
             caption={'Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.'}
             icon={icon2}
           />
-          <InfoBlock
+          <Card
             className={styles.infoBlock}
             heading={'Fully Customizable'}
             caption={'Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.'}
