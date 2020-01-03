@@ -20,10 +20,12 @@ Runs the app in the development mode.
     src
     ├── components              # main project components
     ├── lib                     # reusable components and styles
+    ├── service                 # create routes for http request
     │   └── components          # reusable jsx
     │   └── fonts               # project fonts
     │   └── styles              # typography, mixins, colors
     │   └── images              # reusable images
+    │   └── http                # reusable http methods, automate body stringify
 
 
 ### Thanks for review!
