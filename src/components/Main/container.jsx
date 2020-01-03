@@ -8,7 +8,7 @@ export default initialValue => {
   const [copyItemSuccess, setCopyItemSuccess] = useState('');
 
   return {
-    onChange: e => setValue(e.target.value),
+    onChange: value => setValue(value),
     onSubmit: async (e) => {
       e.preventDefault();
 

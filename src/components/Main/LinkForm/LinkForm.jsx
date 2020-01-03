@@ -18,7 +18,7 @@ const LinkForm = ({
         className={cx(styles.input, { [styles.invalid]: invalidValue })}
         type="url"
         placeholder="Shorten a link here..."
-        onChange={onChange}
+        onChange={e => onChange(e.target.value)}
         value={value}
       />
       {invalidValue && <p className={styles.error}>Please add a link</p>}
