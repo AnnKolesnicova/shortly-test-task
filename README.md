@@ -29,5 +29,3 @@ Runs the app in the development mode.
 
 
 ### Thanks for review!
-
-![Alt text](https://www.meme-arsenal.com/memes/e6ddf9a4468ef7c03550c743c6b49352.jpg)
