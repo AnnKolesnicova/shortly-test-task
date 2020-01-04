@@ -11,24 +11,22 @@ export default initialValue => {
     onChange: value => setValue(value),
     onSubmit: async (e) => {
       e.preventDefault();
-
       if (value) {
-        setInvalidValue(false);
-        try {
-          const response = await ShortlyService.shortenLink({ longUrl: value });
-          const { shortUrl, id } = response;
+        const response = await ShortlyService.shortenLink({ longUrl: value });
+        const { shortUrl, id } = response;
 
+        if (shortUrl) {
+          setInvalidValue(false);
+          setValue('');
           setList([...list, {
             link: value,
             shortLink: shortUrl,
             id,
           }]);
-          setValue('');
-        } catch (error) {
-          console.error(error)
-        }
+        } else setInvalidValue(true); // if invalid url (as localhost)
+
       } else {
-        setInvalidValue(true);
+        setInvalidValue(true); // if no value
       }
     },
     onCopy: item => setCopyItemSuccess(item),
