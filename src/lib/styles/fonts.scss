@@ -8,30 +8,5 @@ sans-serif,
 segoe ui symbol;
 
 @mixin web-fonts {
-  @font-face {
-    font-family: 'Poppins';
-    src: url('../fonts/Poppins-Regular.ttf') format('ttf');
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Poppins';
-    src: url('../fonts/Poppins-Bold.ttf') format('ttf');
-    font-weight: 700;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Poppins';
-    src: url('../fonts/Poppins-Medium.ttf') format('ttf');
-    font-weight: 500;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'Poppins';
-    src: url('../fonts/Poppins-MediumItalic.ttf') format('ttf');
-    font-weight: 500;
-    font-style: italic;
-  }
+  @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,500i,700&display=swap');
 }

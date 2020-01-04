@@ -22,7 +22,6 @@ Runs the app in the development mode.
     ├── service                 # create routes for http request
     ├── lib                     # reusable components and styles
     │   └── components          # reusable jsx
-    │   └── fonts               # project fonts
     │   └── styles              # typography, mixins, colors
     │   └── images              # reusable images
     │   └── http                # reusable http methods, automate body stringify
